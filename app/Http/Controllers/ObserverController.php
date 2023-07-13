@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\User;
-use App\Services\Observerpattern\Events\UserRegistered;
 use Illuminate\Http\Request;
 
 class ObserverController extends Controller
@@ -19,13 +18,8 @@ class ObserverController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-
         $user = User::create(request(['name', 'email', 'password']));
-        // $user = $user->email;
-        event(new UserRegistered($user));
-
         return back();
-        // return response()->with('status', 'Profile updated!');
     }
 
     public function Posts() {

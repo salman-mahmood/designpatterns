@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\AdapterController;
 use App\Http\Controllers\DecoratorController;
+use App\Http\Controllers\FactoryController;
 use App\Http\Controllers\IteratorController;
 use App\Http\Controllers\ObserverController;
 use App\Http\Controllers\StrategyController;
@@ -31,3 +32,4 @@ Route::post('/userreg', [ObserverController::class, 'UserReg'])->name('Userreg')
 Route::get('/post', [ObserverController::class, 'Posts']);
 Route::post('/publishpost', [ObserverController::class, 'PublishPost'])->name('publishpost');
 Route::get('/iteratorpattern',[IteratorController::class, 'Iterator'])->name('iterator');
+Route::get('/factorypattern',[FactoryController::class, 'FactoryPattern'])->name('factorypattern');
